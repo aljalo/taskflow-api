@@ -1,0 +1,91 @@
+name: Feature request
+description: Propose a new product capability or improvement
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing an improvement to TaskFlow.
+
+        Provide enough context for the team to understand the business need
+        before discussing implementation details.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or business need
+      description: Describe the problem this feature should solve.
+      placeholder: What problem are users experiencing, and why is it important?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed solution
+      description: Describe the expected behavior from the user's perspective.
+      placeholder: Explain what the feature should allow users to do.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: List objective and testable conditions for completion.
+      placeholder: |
+        - [ ] First acceptance criterion
+        - [ ] Second acceptance criterion
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe alternative solutions or workarounds, if any.
+      placeholder: What other approaches were considered?
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Suggested priority
+      description: Select the expected business priority.
+      options:
+        - Low
+        - Medium
+        - High
+        - Critical
+      default: 1
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical_notes
+    attributes:
+      label: Technical notes
+      description: Add constraints or implementation considerations, if known.
+      placeholder: Security, performance, compatibility, or migration concerns.
+
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: List the conditions required before this issue can be closed.
+      placeholder: |
+        - [ ] Implementation is complete
+        - [ ] Tests pass
+        - [ ] Pull request is reviewed
+        - [ ] Documentation is updated
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: readiness
+    attributes:
+      label: Readiness checklist
+      options:
+        - label: I verified that an equivalent open issue does not already exist.
+          required: true
+        - label: This request describes one cohesive feature.
+          required: true

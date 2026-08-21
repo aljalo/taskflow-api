@@ -1,0 +1,112 @@
+name: Bug report
+description: Report reproducible incorrect or unexpected behavior
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve TaskFlow.
+
+        Do not include passwords, access tokens, database credentials, personal
+        data, or other sensitive information in this report.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Bug summary
+      description: Provide a concise description of the incorrect behavior.
+      placeholder: What went wrong?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest reliable sequence that reproduces the issue.
+      placeholder: |
+        1. Send a request to ...
+        2. Use the following input ...
+        3. Observe the response ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected behavior
+      description: Describe what should have happened.
+      placeholder: The system should...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: Actual behavior
+      description: Describe what happened instead.
+      placeholder: The system currently...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: Select the impact of the bug.
+      options:
+        - Low - minor inconvenience
+        - Medium - feature partially impaired
+        - High - important workflow blocked
+        - Critical - security, data loss, or complete outage
+      default: 1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      description: Select the environment where the bug occurred.
+      options:
+        - Local development
+        - Testing
+        - Staging
+        - Production
+        - Unknown
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Application version or commit
+      description: Provide the release version or Git commit SHA, if known.
+      placeholder: v1.0.0 or 1f43278
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or supporting evidence
+      description: Add sanitized logs, responses, or screenshots.
+      placeholder: Remove secrets and personal data before submitting.
+      render: shell
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Add any other information that may help investigation.
+
+  - type: checkboxes
+    id: readiness
+    attributes:
+      label: Submission checklist
+      options:
+        - label: I verified that an equivalent open bug does not already exist.
+          required: true
+        - label: I removed secrets and sensitive information from this report.
+          required: true
+        - label: I included enough information to reproduce the problem.
+          required: true
