@@ -143,6 +143,7 @@ com.taskflow
 │   ├── application
 │   ├── domain
 │   └── infrastructure
+│       └── security
 ├── user
 │   ├── api
 │   ├── application
@@ -152,7 +153,6 @@ com.taskflow
 ├── membership
 ├── task
 ├── comment
-├── security
 ├── shared
 │   ├── audit
 │   ├── exception
@@ -160,6 +160,15 @@ com.taskflow
 │   └── validation
 └── config
 ```
+
+The Authentication module owns Spring Security integration, JWT processing,
+authentication filters, and authenticated-principal construction under
+`auth.infrastructure.security`.
+
+Resource-level authorization remains inside the application services of the
+module that owns the protected resource. For example, project membership checks
+belong to the Project or Membership use case rather than the Authentication
+module.
 
 Not every package must be created in advance. Packages are introduced when a
 feature needs them.
